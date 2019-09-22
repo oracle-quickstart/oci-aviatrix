@@ -6,4 +6,4 @@ The Aviatrix cloud network solution consists of two components, the controller a
 
 ## Aviatrix Controller
 
-Detailed instructions for deploying Aviatrix Controller on OCI can be found in the [Controller](./controller/README.md) space.
+To do.
