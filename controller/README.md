@@ -25,13 +25,7 @@ Customers can run Aviatrix Controller from local Terraform CLI, OCI Resource Man
 
 ## Overview
 
-Aviatrix Controller [simple](./simple/) template should provision all necessary [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm#OverviewofNetworking) Infrastructure resources to enable you to connect via HTTPS to your OCI VM including:
-
-* [VCN](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm#components)
-* Public Subnet
-* Internet Gateway
-* Route Tables
-* Security Rules
+Aviatrix Controller [simple](./simple/) template should provision all necessary [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm#OverviewofNetworking) Infrastructure resources to enable you to connect via HTTPS to your OCI Controller VM including [VCN](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm#components), Public Subnet, Internet Gateway, Route Tables, Network Security Groups.
 
 ![Aviatrix on OCI](./images/aviatrix-on-oci-mp.png)
 
