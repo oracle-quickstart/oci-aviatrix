@@ -3,21 +3,8 @@ module "image_listing" {
   source          = "./listings"
   enabled         = "${var.enabled}"
   product_version = "${var.product_version}"
-  license_model     = "${var.license_model}"     //BYOL or PAID
+  license_model   = "${var.license_model}"   //BYOL or PAID
 }
-
-output "marketplace_listing_id" {
-    value = "${module.image_listing.listing_id}"
-}
-
-output "marketplace_resource_id" {
-    value = "${module.image_listing.listing_resource_id}"
-}
-
-output "marketplace_image_ocid" {
-    value = "${module.image_listing.listing_id}"
-}
-
 
 ## Subscribe to Marketplace listing
 module "subscribe_to_listing" {
