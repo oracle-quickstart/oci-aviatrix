@@ -10,13 +10,14 @@ module "subscribe_to_marketplace" {
 ## Creates a VCN with a public subnet and default IGW and Route Table
 module "default_vcn_plus_subnet" {
   source = "../terraform-modules/vcn-plus-subnet-default"
-  compartment_ocid    = "${var.compartment_ocid}"
-  vcn_display_name    = "${var.vcn_display_name}"
-  vcn_cidr_block      = "${var.vcn_cidr_block}"
-  vcn_dns_label       = "${var.vcn_dns_label}"
-  subnet_display_name = "${var.subnet_display_name}"
-  subnet_cidr_block   = "${var.subnet_cidr_block}"
-  subnet_dns_label    = "${var.subnet_dns_label}"
+  compartment_ocid        = "${var.compartment_ocid}"
+  vcn_display_name        = "${var.vcn_display_name}"
+  vcn_cidr_block          = "${var.vcn_cidr_block}"
+  vcn_dns_label           = "${var.vcn_dns_label}"
+  routetable_display_name = "${var.routetable_display_name}"
+  subnet_display_name     = "${var.subnet_display_name}"
+  subnet_cidr_block       = "${var.subnet_cidr_block}"
+  subnet_dns_label        = "${var.subnet_dns_label}"
 }
 
 ## Allow Ingress HTTPS from 
