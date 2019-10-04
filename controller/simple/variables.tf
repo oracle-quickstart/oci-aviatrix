@@ -48,7 +48,7 @@ variable "vcn_cidr_block" {
 }
 
 variable "subnet_display_name" {
-  default = "controller"
+  default = "controller-subnet"
 }
 
 variable "subnet_cidr_block" {
@@ -56,7 +56,7 @@ variable "subnet_cidr_block" {
 }
 
 variable "subnet_dns_label" {
-  default = "controller"
+  default = "management"
 }
 
 variable "nsg_display_name" {
