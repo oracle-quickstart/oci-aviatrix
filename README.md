@@ -7,3 +7,9 @@ The Aviatrix cloud network solution consists of two components, the controller a
 ## Aviatrix Controller
 
 Detailed instructions for deploying Aviatrix Controller on Oracle Cloud Infrastructure can be found in the [Controller](./controller/README.md) space.
+
+## Terraform Version
+
+master branch is for Terraform v0.12+
+
+v0.11  branch is for Terraform v0.11+
