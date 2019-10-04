@@ -17,7 +17,7 @@ variable "license_model" {
 }
 
 variable "product_version" {
-  default     = "5.0"
+  default     = "5.0.1"
   description = "Aviatrix Controller Version available in the Marketplace"
 }
 
@@ -52,7 +52,7 @@ variable "subnet_display_name" {
 }
 
 variable "subnet_cidr_block" {
-  default = "10.0.1.0/24"
+  default = "10.0.0.0/24"
 }
 
 variable "subnet_dns_label" {

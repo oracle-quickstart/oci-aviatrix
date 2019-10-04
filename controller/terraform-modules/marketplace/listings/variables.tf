@@ -19,7 +19,7 @@ variable "mp_paid_versions" {
   type = "map"
 
   default = {
-    "5.0" = "5.0"
+    "5.0.1" = "5.0.1"
   }
 }
 
@@ -27,7 +27,7 @@ variable "mp_byol_versions" {
   type = "map"
 
   default = {
-    "5.0" = "5.0-090420192309"
+    "5.0.1" = "5.0.1"
   }
 }
 
@@ -37,7 +37,7 @@ variable "mp_paid_listing_resource_id" {
   type = "map"
 
   default = {
-    "5.0" = "ocid1.image.oc1..aaaaaaaas4ycaortf6duoq7jqvxr53sejoc6olq6mnds43qxnvx5a246x5fa"
+    "5.0.1" = "ocid1.image.oc1..aaaaaaaa3zkysxdvsyb76plwj4tw54iiibozlfq3quwgiveeaqdscwmtwgoa"
   }
 }
 
@@ -45,6 +45,6 @@ variable "mp_byol_listing_resource_id" {
   type = "map"
 
   default = {
-    "5.0-090420192309" = "ocid1.image.oc1..aaaaaaaazazftgkqv5rgglks5uidsp2dlf7laydczwb3xh7lepwvaw22djoq"
+    "5.0.1" = "ocid1.image.oc1..aaaaaaaaltulqugc5ygggevy3ig7mv2io75azdareylypx23ezhvonqgrcrq"
   }
 }

@@ -20,7 +20,7 @@ resource "oci_core_network_security_group_security_rule" "rule_ingress_tcp443" {
   protocol                  = "6"
   direction                 = "INGRESS"
   source                    = "${var.nsg_whitelist_ip !="" ? var.nsg_whitelist_ip : "0.0.0.0/0"}"
-  stateless                 = true
+  stateless                 = false
 
   tcp_options {
     destination_port_range {
