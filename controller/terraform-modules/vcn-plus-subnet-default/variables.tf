@@ -18,7 +18,7 @@ variable "igw_display_name" {
 }
 
 variable "routetable_display_name" {
-  default = "Default Route Table for aviatrix-vcn"
+  default = "route-table"
 }
 
 variable "subnet_cidr_block" {

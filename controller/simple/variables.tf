@@ -57,6 +57,10 @@ variable "vcn_cidr_block" {
   default = "10.0.0.0/16"
 }
 
+variable "routetable_display_name" {
+  default = "controller-route-table"
+}
+
 variable "subnet_display_name" {
   default = "controller-subnet"
 }
