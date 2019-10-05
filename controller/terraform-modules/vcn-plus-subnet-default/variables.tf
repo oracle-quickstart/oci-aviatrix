@@ -1,4 +1,5 @@
-variable "compartment_ocid" {}
+variable "compartment_ocid" {
+}
 
 variable "vcn_cidr_block" {
   default = ""
@@ -20,7 +21,8 @@ variable "routetable_display_name" {
   default = "Default Route Table for aviatrix-vcn"
 }
 
-variable "subnet_cidr_block" {}
+variable "subnet_cidr_block" {
+}
 
 variable "subnet_display_name" {
   default = "subnet"
@@ -29,3 +31,4 @@ variable "subnet_display_name" {
 variable "subnet_dns_label" {
   default = "subnet"
 }
+

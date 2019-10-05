@@ -1,11 +1,21 @@
 # Variables required by the OCI Provider
-variable "tenancy_ocid" {}
+variable "tenancy_ocid" {
+}
 
-variable "user_ocid" {}
-variable "fingerprint" {}
-variable "region" {}
-variable "private_key_path" {}
-variable "ssh_public_key" {}
+variable "user_ocid" {
+}
+
+variable "fingerprint" {
+}
+
+variable "region" {
+}
+
+variable "private_key_path" {
+}
+
+variable "ssh_public_key" {
+}
 
 # Variables required for launching Aviatrix Controller
 variable "compartment_ocid" {
@@ -67,3 +77,4 @@ variable "nsg_whitelist_ip" {
   description = "Network Security Groups - Whitelisted CIDR block for ingress communication: Enter 0.0.0.0/0 or <your IP>/32 "
   default     = "0.0.0.0/0"
 }
+
