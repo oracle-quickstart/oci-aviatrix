@@ -1,6 +1,6 @@
-# oci-quickstart-aviatrix
+# oci-aviatrix
 
-These are Terraform modules that deploys [Aviatrix Secure Networking Platform](https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html) on [Oracle Cloud Infrastructure (OCI)]((https://cloud.oracle.com/en_US/cloud-infrastructure)). It is developed jointly by Oracle and Aviatrix. For instructions on how to use this material and details on getting support from the vendor that maintains this material, please contact them directly.
+These are Terraform modules that deploys [Aviatrix Secure Networking Platform](https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html) on [Oracle Cloud Infrastructure (OCI)]((https://cloud.oracle.com/en_US/cloud-infrastructure)). It is developed jointly by Oracle and Aviatrix.
 
 The Aviatrix cloud network solution consists of two components, the controller and gateways, both of which are cloud VMs available on the Oracle Cloud Infrastructure Marketplace. Gateways are launched from the controller console to specific VCNs.
 
@@ -10,6 +10,5 @@ Detailed instructions for deploying Aviatrix Controller on Oracle Cloud Infrastr
 
 ## Terraform Version
 
-master branch is for Terraform v0.12+
-
-v0.11  branch is for Terraform v0.11+
+* master branch is for Terraform v0.12+
+* v0.11  branch is for Terraform v0.11+
