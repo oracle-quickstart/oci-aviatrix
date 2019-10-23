@@ -1,0 +1,202 @@
+# Title shown in Application Information tab.
+title: Aviatrix Secure Networking Platform
+# Sub Title shown in Application Information tab.
+description: Multi-Cloud Cross-Region Aviatrix Controller (PayAsYouGo version)
+schemaVersion: 1.1.0
+version: "20190304"
+
+# URL of Logo Icon used on Application Information tab. Logo must be 130x130 pixels.
+# (Optional)
+logoUrl: https://partner.cloudmarketplace.oracle.com/partner/content?contentId=63096723
+
+# Used in Application Information tab to Hyperlink Title and Logo to the Marketplace 
+# Listing.
+# Also used to link to Listing Usage section for "View Instructions".
+# (Optional) If it is missing, Application Information uses the 
+# "marketplace-listing-id" tag for the same purpose.
+source:
+  type: marketplace
+  reference: 63096723
+
+locale: "en"
+variableGroups:
+  - title: "Hidden Variable Group"
+    visible: false
+    variables:
+      - $tenancy_ocid 
+      - $region 
+
+  - title: "Network Group"
+    variables:
+      - $vcn_strategy 
+      - $existing_vcn_id 
+      - $vcn_name 
+      - $vcn_cidr 
+      - $subnet_strategy_existing_vcn 
+      - $subnet_strategy_new_vcn 
+      - $subnet_type 
+      - $subnet_span 
+      - $subnet_id 
+      - $subnet_cidr 
+
+variables:
+  # Hidden variables
+  tenancy_ocid:
+    type: string
+    title: Tenancy ID
+    description: The Oracle Cloud Identifier (OCID) for your tenancy
+    required: true
+
+  region:
+    type: oci:identity:region:name
+    title: Region
+    description: The region in which to create all resources
+    required: true
+
+  # Network Type Options
+  vcn_strategy:
+    type: enum
+    title: Virtual Cloud Network Strategy
+    description: Create or use existing VCN
+    enum:
+      - "Create New VCN"
+      - "Use Existing VCN"
+    required: true
+    default: "Use Existing VCN"
+
+  subnet_strategy_existing_vcn:
+    visible: #($vcn_strategy  == "Use Existing VCN")
+      eq:
+        - $vcn_strategy 
+        - "Use Existing VCN"
+    type: enum
+    title: Subnet Strategy
+    description: Create or use existing subnet
+    enum:
+      - "Create New Subnet"
+      - "Use Existing Subnet"
+    required: true
+    default: ""
+
+  subnet_strategy_new_vcn:
+    visible: #($vcn_strategy  == "Create New VCN")
+      eq:
+        - $vcn_strategy 
+        - "Create New VCN"
+    type: enum
+    title: Subnet Strategy
+    description: Create or use existing subnet
+    enum:
+      - "Create New Subnet"
+    required: true
+    default: ""
+
+  subnet_type:
+    visible: #($subnet_strategy_existing_vcn  == "Create New Subnet")
+      eq:
+        - $subnet_strategy_existing_vcn 
+        - "Create New Subnet"
+    type: enum
+    title: Subnet Type
+    description: Choose between private and public subnets
+    enum:
+      - "Use Private Subnet"
+      - "Use Public Subnet"
+    required: true
+    default: "Use Public Subnet"
+
+  subnet_span:
+    visible: #($subnet_strategy_existing_vcn  == "Create New Subnet")
+      eq:
+        - $subnet_strategy_existing_vcn 
+        - "Create New Subnet"
+    type: enum
+    title: Subnet Span
+    description: Choose between regional and AD specific subnets
+    enum:
+      - "Regional Subnet"
+      - "AD Specific Subnet"
+    required: true
+    default: "Regional Subnet"
+
+  vcn_name:
+    visible: #($vcn_strategy  == "Create New VCN")
+      eq:
+        - $vcn_strategy 
+        - "Create New VCN"
+    type: string
+    default: ''
+    required: true
+    title: Network
+    description: The name of the new Virtual Cloud Network (VCN) to create for this service
+
+  existing_vcn_id:
+    visible: #($vcn_strategy  == "Use Existing VCN")
+      eq:
+        - $vcn_strategy 
+        - "Use Existing VCN"
+    type: oci:core:vcn:id
+    dependsOn:
+      compartmentId: $compartment_ocid 
+    required: true
+    title: Existing Network
+    description: An existing Virtual Cloud Network (VCN) in which to create the compute instances, network resources, and load balancers. If not specified, a new VCN is created.
+
+  vcn_cidr:
+    visible: #($vcn_strategy  == "Create New VCN")
+      eq:
+        - $vcn_strategy 
+        - "Create New VCN"
+    type: string
+    default: 10.0.0.0/16
+    pattern: "^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\/(3[0-2]|[1-2]?[0-9])$"
+    title: Network CIDR
+    description: The CIDR to assign to the new virtual cloud network (VCN) to create for this service. This field is not required if you want to use an existing VCN.
+
+  subnet_cidr:
+    visible:
+    # (($vcn_strategy  == "Use Existing VCN") 
+         # AND $subnet_strategy_existing_vcn  == "Create New Subnet") OR 
+         # (($vcn_strategy  == "Create New VCN") 
+         # AND $subnet_strategy_new_vcn  == "Create New Subnet"))
+      or: 
+        - and:
+          - eq:
+              - $vcn_strategy 
+              - "Use Existing VCN"
+          - eq:
+              - $subnet_strategy_existing_vcn 
+              - "Create New Subnet"
+        - and:
+          - eq:
+            - $vcn_strategy 
+            - "Create New VCN"
+          - eq:
+            - $subnet_strategy_new_vcn 
+            - "Create New Subnet"
+    type: string
+    default: 10.0.3.0/24
+    pattern: "^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\/(3[0-2]|[1-2]?[0-9])$"
+    required: true
+    title: Subnet CIDR
+    description: "The CIDR of the new subnet to create for compute instances. This field is required only if you want to use an existing VCN. The new subnet's CIDR should not overlap with any other subnet CIDRs."
+
+  subnet_id:
+    visible:
+    # ($vcn_strategy  == "Use Existing VCN") 
+         # AND $subnet_strategy_existing_vcn  == "Use Existing Subnet")
+      and:
+        - eq:
+            - $vcn_strategy 
+            - "Use Existing VCN"
+        - eq:
+            - $subnet_strategy_existing_vcn 
+            - "Use Existing Subnet"
+    type: oci:core:subnet:id
+    dependsOn:
+      vcnId: $existing_vcn_id 
+      compartmentId: $compartment_ocid 
+    default: ''
+    required: true
+    title: Existing Subnet
+    description: An existing subnet to use for compute instances. This subnet must already be present in the chosen VCN.

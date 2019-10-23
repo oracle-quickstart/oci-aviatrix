@@ -11,6 +11,7 @@ variable "compartment_id" {
 }
 
 variable "enabled" {
-  default = 0
+  type = bool
+  default = true
 }
 

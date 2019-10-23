@@ -7,3 +7,4 @@
 
 # .tfvars files
 *.tfvars
+controller/marketplace/util/aviatrix-byol-5.0.1.zip

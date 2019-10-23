@@ -17,10 +17,6 @@ variable "igw_display_name" {
   default = "internet-gateway"
 }
 
-variable "routetable_display_name" {
-  default = "route-table"
-}
-
 variable "subnet_cidr_block" {
 }
 
@@ -32,3 +28,15 @@ variable "subnet_dns_label" {
   default = "subnet"
 }
 
+variable "use_existing_network" {
+  type = bool
+  default = false
+}
+
+variable "vcn_id" {  
+  default = ""
+}
+
+variable "subnet_id" {
+  default = ""
+}

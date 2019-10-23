@@ -10,3 +10,6 @@ output "marketplace_resource_version" {
   value = module.image_listing.listing_resource_version
 }
 
+output "subscription" {
+  value = module.subscribe_to_listing.subscription
+}

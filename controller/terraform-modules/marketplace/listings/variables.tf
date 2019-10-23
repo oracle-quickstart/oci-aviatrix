@@ -1,4 +1,6 @@
 variable "enabled" {
+  type = bool
+  default = true
 }
 
 variable "license_model" {

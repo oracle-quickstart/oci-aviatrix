@@ -17,6 +17,11 @@ variable "private_key_path" {
 variable "ssh_public_key" {
 }
 
+variable "vm_depends_on" {
+  type    = any
+  default = null
+}
+
 # Variables required for launching Aviatrix Controller
 variable "compartment_ocid" {
   description = "Compartment where infrastructure resources will be created"

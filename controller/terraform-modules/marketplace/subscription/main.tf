@@ -1,7 +1,7 @@
 #Local variables pointing to the Marketplace catalog resource
 #Eg. Modify accordingly to your Application/Listing
 locals {
-  enabled                  = var.enabled == "true" ? 1 : 0
+  enabled                  = var.enabled ? 1 : 0
   listing_id               = var.mp_listing_id
   listing_resource_id      = var.mp_listing_resource_id
   listing_resource_version = var.mp_listing_resource_version

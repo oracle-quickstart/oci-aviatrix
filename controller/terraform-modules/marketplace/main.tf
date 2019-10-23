@@ -9,10 +9,9 @@ module "image_listing" {
 ## Subscribe to Marketplace listing
 module "subscribe_to_listing" {
   source                      = "./subscription"
-  enabled                     = var.enabled
+  enabled                     = var.subscribe
   compartment_id              = var.compartment_id
   mp_listing_id               = module.image_listing.listing_id
   mp_listing_resource_id      = module.image_listing.listing_resource_id
   mp_listing_resource_version = module.image_listing.listing_resource_version
 }
-
