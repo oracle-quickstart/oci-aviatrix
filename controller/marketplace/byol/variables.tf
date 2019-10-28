@@ -97,7 +97,7 @@ variable "subnet_cidr_block" {
 
 variable "subnet_dns_label" {
   description = "Subnet DNS Label"
-  default     = "aviatrix"
+  default     = "management"
 }
 
 ############################
@@ -115,7 +115,7 @@ variable "nsg_whitelist_ip" {
 
 variable "nsg_display_name" {
   description = "Network Security Groups - Name"
-  default     = "controller-sec-group"
+  default     = "controller-security-group"
 }
 
 variable "routetable_display_name" {

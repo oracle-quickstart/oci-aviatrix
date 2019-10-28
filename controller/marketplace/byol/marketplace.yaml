@@ -97,7 +97,7 @@ variables:
   vm_display_name:
     type: string
     required: true
-    default: aviatrix-controller
+    default: aviatrix-controller-byol
     title: Aviatrix VM Name
     description: The name of the Instance
 
