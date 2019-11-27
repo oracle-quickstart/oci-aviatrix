@@ -5,7 +5,7 @@
 # Adds: mkpl-schema.yaml, image_subscription.tf
 # Output: $out_file
 
-out_file="aviatrix-byol-5.0.1.zip"
+out_file="aviatrix-paid-5.0.1.zip"
 
 echo "cleanup"
 rm -rf ./tmp_package
@@ -14,8 +14,8 @@ rm $out_file
 echo "Creating tmp dir...."
 mkdir ./tmp_package
 
-echo "Copying byol files to tmp dir...."
-cp -rv ../byol/* ./tmp_package/
+echo "Copying files to tmp dir...."
+cp -v ./* ./tmp_package/
 echo "Copying terraform-modules directory to tmp dir...."
 cp -rv ../../terraform-modules ./tmp_package
 
@@ -28,6 +28,7 @@ rm -rf ./tmp_package/.terraform
 echo "Removing statefile and tfvars"
 rm ./tmp_package/terraform.tfstate*
 rm ./tmp_package/terraform.tfvars
+rm ./tmp_package/*.sh
 
 echo "Creating $out_file ...."
 cd tmp_package

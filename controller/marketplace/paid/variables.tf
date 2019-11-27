@@ -10,11 +10,11 @@ variable "region" {
 }
 
 variable "mp_listing_id" {
-  default = "ocid1.appcataloglisting.oc1..aaaaaaaavalzcaxbs4hwta4uefnkdh7fjgd3uuw7lwlk6pn2uvzglrn3zt2a"
+  default = "ocid1.appcataloglisting.oc1..aaaaaaaawdptz5o42tuhg62defjimphzuck4fbrz4cilez2mle3bcs5t22wa"
 }
 
 variable "mp_listing_resource_id" {
-  default = "ocid1.image.oc1..aaaaaaaaltulqugc5ygggevy3ig7mv2io75azdareylypx23ezhvonqgrcrq"
+  default = "ocid1.image.oc1..aaaaaaaa3zkysxdvsyb76plwj4tw54iiibozlfq3quwgiveeaqdscwmtwgoa"
 }
 
 variable "mp_listing_resource_version" {

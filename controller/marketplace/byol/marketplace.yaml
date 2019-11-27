@@ -91,19 +91,19 @@ variables:
   ssh_public_key:
     type: string
     required: true
-    title: Public SSH Key
+    title: Public SSH Key string
     description: Public SSH Key to access VM via SSH
 
   vm_display_name:
     type: string
     required: true
-    default: aviatrix-vm
+    default: aviatrix-controller-byol
     title: Aviatrix VM Name
     description: The name of the Instance
 
   vm_compute_shape:
     type: oci:core:instanceshape:name
-    default: VM.Standard2.4
+    default: VM.Standard2.2
     title: Compute Shape
     required: true
     dependsOn:
@@ -172,7 +172,7 @@ variables:
         - network_strategy 
         - "Create New VCN and Subnet"
     type: string
-    default: aviatrix
+    default: aviatrix-vcn
     required: true
     title: Virtual Cloud Network (VCN)
     description: The name of the new Virtual Cloud Network (VCN)
@@ -207,7 +207,7 @@ variables:
         - network_strategy 
         - "Create New VCN and Subnet"
     type: string
-    default: aviatrix
+    default: aviatrix-subnet
     required: true
     title: Subnet
     description: The name of the new Subnet
@@ -256,7 +256,7 @@ variables:
         - "Create New VCN and Subnet"
     type: string
     required: true
-    default: aviatrix
+    default: management
     title: Subnet DNS Label
     description: Subnet DNS Label. Only letters and numbers, starting with a letter. 15 characters max.    
 
@@ -270,14 +270,14 @@ variables:
   nsg_display_name:
     type: string
     required: true
-    default: aviatrix
+    default: aviatrix-controller-security-group
     title: Network Security Group
     description: The name of the Network Security Group
 
   routetable_display_name:
     type: string
     required: true
-    default: aviatrix
+    default: aviatrix-route-table
     title: Route Table
     description: The name of the Route Table
 
@@ -304,4 +304,5 @@ outputs:
     title: Private IP
     visible: true
   
-primaryOutputButton: ${aviatrix_controller_url}    
+primaryOutputButton: ${aviatrix_controller_url}
+
