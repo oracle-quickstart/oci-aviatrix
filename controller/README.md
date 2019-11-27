@@ -4,6 +4,7 @@ These are Terraform modules that deploys [Aviatrix Controller](https://docs.avia
 
 * [simple](simple) contains Terraform resources for deploying a single node of Aviatrix Controller on Oracle Cloud Infrastructure via Terraform CLI.
 * [terraform-modules](terraform-modules) contains reusable Terraform modules
+* [marketplace](marketplace) contains ORM based Marketplace Stack modules
 
 This repo is under active development.  Building open source software is a community effort.  We're excited to engage with the community building this.
 
