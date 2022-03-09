@@ -5,7 +5,7 @@
 # Adds: mkpl-schema.yaml, image_subscription.tf
 # Output: $out_file
 
-out_file="aviatrix-paid-5.0.1.zip"
+out_file="aviatrix-paid-6.3.0.zip"
 
 echo "cleanup"
 rm -rf ./tmp_package
