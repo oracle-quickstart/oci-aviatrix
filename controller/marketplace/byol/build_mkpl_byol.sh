@@ -5,7 +5,7 @@
 # Adds: mkpl-schema.yaml, image_subscription.tf
 # Output: $out_file
 
-out_file="aviatrix-byol-5.0.1.zip"
+out_file="aviatrix-byol-6.3.1.zip"
 
 echo "cleanup"
 rm -rf ./tmp_package
