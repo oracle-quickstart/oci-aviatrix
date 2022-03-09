@@ -27,7 +27,8 @@ variableGroups:
       - region 
       - mp_listing_id
       - mp_listing_resource_id
-      - mp_listing_resource_version      
+      - mp_listing_resource_version
+      - ${marketplace_source_images}      
 
   - title: "Compute Configuration"
     variables:
