@@ -1,3 +1,7 @@
+# **This repo is archived and should no longer be used**
+# **Please see https://github.com/AviatrixSystems/terraform-module-oci instead.**
+
+
 # oci-aviatrix
 
 These are Terraform modules that deploys [Aviatrix Secure Networking Platform](https://docs.aviatrix.com/StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide.html) on [Oracle Cloud Infrastructure (OCI)]((https://cloud.oracle.com/en_US/cloud-infrastructure)). It is developed jointly by Oracle and Aviatrix.
